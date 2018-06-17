@@ -16,12 +16,12 @@ def gcd_rec(a, b):
         if b % a == 0:
             return a
         else:
-            return gcd(b % a, a)
+            return gcd_rec(b % a, a)
     else:
         if a % b == 0:
             return b
         else:
-            return gcd(b, a % b)
+            return gcd_rec(b, a % b)
 
 # versione iterativa
 def gcd_iter(a, b):
