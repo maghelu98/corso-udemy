@@ -49,3 +49,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    pippo = raw_input("dammi una stringa: ")
