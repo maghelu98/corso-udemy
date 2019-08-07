@@ -1,7 +1,7 @@
 def porta():
-    """ porta(): genera una porta a caso con probabilita' 1/4. 
+    """ porta(): genera una porta a caso con probabilita' 1/4.
 
-    Viene utilizzata la funzione random() per generare un numero 
+    Viene utilizzata la funzione random() per generare un numero
     casuale (reale) >= 0.0 e < 1.0
 
     Con probabilita'  0.75 non viene generata la porta
@@ -17,7 +17,7 @@ def porta():
         print ("--- [[[ porta ]]] ---")
         return 1
     else:
-        return 0    
+        return 0
 
 def test_porta():
     """ test funzione porta, in media dovrebbe trovare 12/4 = 3 porte """
@@ -31,7 +31,7 @@ def test_porta():
 
 
 
-def scala(n):
+def scala(n, totale_porte = 0):
     """ scala(): genera una scala e n gradini e ritorna il numero di porte.
 
     Per ogni gradino viene controllata la presenza di una "porta" casuale
@@ -47,19 +47,19 @@ def scala(n):
     """
 
     #@TODO: questa riga *NON* e' giusta, deve essere un argomento di scala()
-    totale_porte = 0 
+    #totale_porte = 0
 
     if n == 0:
         #@TODO: come ritornare il totale finale chiamata ricorsiva?
         print "FINE SCALA -- TOTALE: %d " % (totale_porte)
-        return 0
+        return totale_porte
 
     porta_su_scalino = porta()
     totale_porte = totale_porte + porta_su_scalino
     print "scalino %d -- porta? %d, totale: %d " % (n, porta_su_scalino, totale_porte)
 
     #@TODO: come propagare il totale nella chiamata ricorsiva?
-    return scala(n-1)
+    return scala(n-1, totale_porte)
 
 def main():
     while True:
@@ -71,5 +71,5 @@ def main():
         res = scala(nn) # @TODO: la chiamata scala() con accumulatore iniziale (=0)
         print "::: scala(%d) -> %r" % (nn, res)
 
-test_porta()
+#test_porta()
 main()
