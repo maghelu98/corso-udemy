@@ -1,3 +1,6 @@
+from __builtin__ import raw_input
+
+
 def porta():
     """ porta(): genera una porta a caso con probabilita' 1/4.
 
@@ -11,27 +14,27 @@ def porta():
     import random
 
     r = random.random()
-    #print("r=%f" % (r))
+    # print("r=%f" % (r))
 
     if r > 0.75:
-        print ("--- [[[ porta ]]] ---")
+        print("--- [[[ porta ]]] ---")
         return 1
     else:
         return 0
 
+
 def test_porta():
     """ test funzione porta, in media dovrebbe trovare 12/4 = 3 porte """
-    print ("\n\n\nTEST-PORTA >>")
+    print("\n\n\nTEST-PORTA >>")
     tot = 0
     for i in range(12):
         r = porta()
         tot = tot + r
-        print ("%d) porta ? => %d -- totale: %d" % (i,r,tot))
-    print ("TEST-PORTA <<\n\n\n")
+        print("%d) porta ? => %d -- totale: %d" % (i, r, tot))
+    print("TEST-PORTA <<\n\n\n")
 
 
-
-def scala(n, totale_porte = 0):
+def scala(n, totale_porte=0):
     """ scala(): genera una scala e n gradini e ritorna il numero di porte.
 
     Per ogni gradino viene controllata la presenza di una "porta" casuale
@@ -46,30 +49,32 @@ def scala(n, totale_porte = 0):
 
     """
 
-    #@TODO: questa riga *NON* e' giusta, deve essere un argomento di scala()
-    #totale_porte = 0
+    # @TODO: questa riga *NON* e' giusta, deve essere un argomento di scala()
+    # totale_porte = 0
 
     if n == 0:
-        #@TODO: come ritornare il totale finale chiamata ricorsiva?
-        print "FINE SCALA -- TOTALE: %d " % (totale_porte)
+        # @TODO: come ritornare il totale finale chiamata ricorsiva?
+        print("FINE SCALA -- TOTALE: %d " % (totale_porte))
         return totale_porte
 
     porta_su_scalino = porta()
     totale_porte = totale_porte + porta_su_scalino
-    print "scalino %d -- porta? %d, totale: %d " % (n, porta_su_scalino, totale_porte)
+    print(f"scalino {n:d} -- porta? {porta_su_scalino:d}, totale: {totale_porte:d} ")
 
-    #@TODO: come propagare il totale nella chiamata ricorsiva?
-    return scala(n-1, totale_porte)
+    # @TODO: come propagare il totale nella chiamata ricorsiva?
+    return scala(n - 1, totale_porte)
+
 
 def main():
     while True:
         nns = raw_input("... Scala: n ? ")
         if nns == "":
-            print ("EOF => exit")
+            print("EOF => exit")
             break
         nn = int(nns)
-        res = scala(nn) # @TODO: la chiamata scala() con accumulatore iniziale (=0)
-        print "::: scala(%d) -> %r" % (nn, res)
+        res = scala(nn)  # @TODO: la chiamata scala() con accumulatore iniziale (=0)
+        print("::: scala(%d) -> %r" % (nn, res))
 
-#test_porta()
+
+# test_porta()
 main()

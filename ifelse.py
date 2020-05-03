@@ -4,4 +4,4 @@ if(n > 30):
 elif(n < 15):
     print("troppi pochi studenti per formare una classe")
 else:
-    print(("la classe e' formata da %d studenti") % (n))
+    print("la classe e' formata da %d studenti" % (n))

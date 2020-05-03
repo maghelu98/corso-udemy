@@ -11,7 +11,8 @@
 			"file": "esercizio-funzioni.py",
 			"settings":
 			{
-				"buffer_size": 345,
+				"buffer_size": 2112,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
@@ -28,11 +29,15 @@
 		"selected_items":
 		[
 			[
-				"Package Control: ",
-				"Package Control: Install Package"
+				"ter",
+				"Terminal: Open"
 			],
 			[
 				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
 				"Package Control: Install Package"
 			],
 			[
@@ -121,10 +126,10 @@
 				{
 					"buffer": 0,
 					"file": "esercizio-funzioni.py",
-					"semi_transient": true,
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 345,
+						"buffer_size": 2112,
 						"regions":
 						{
 						},
